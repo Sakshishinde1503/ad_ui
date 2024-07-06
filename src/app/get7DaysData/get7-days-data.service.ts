@@ -2,8 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/internal/Observable';
-import { map } from 'rxjs';
-import { WeeklyData } from '../weeklyData/weekly-data';
+
 import { WeeklyDataEntry } from '../WeeklyDataEntry/weekly-data-entry';
 
 @Injectable({

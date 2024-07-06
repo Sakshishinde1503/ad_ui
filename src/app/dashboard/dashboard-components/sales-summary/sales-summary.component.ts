@@ -13,7 +13,6 @@ import {
 } from 'ng-apexcharts';
 import { WeeklyDataEntry } from 'src/app/WeeklyDataEntry/weekly-data-entry';
 import { Get7DaysDataService } from 'src/app/get7DaysData/get7-days-data.service';
-import { WeeklyData } from 'src/app/weeklyData/weekly-data';
 
 export type salesChartOptions = {
   series: ApexAxisChartSeries | any;

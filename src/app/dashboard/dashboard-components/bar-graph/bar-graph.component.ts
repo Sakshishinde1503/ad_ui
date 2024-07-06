@@ -94,7 +94,8 @@ export class BarGraphComponent implements OnInit {
       .attr('y', -this.margin.top / 2)
       .attr('text-anchor', 'middle')
       .style('font-size', '14px')
-      .text('Number of Transactions and Successes by Service');
+      //.text('Number of Transactions and Failures by Service')
+      .text('In last 1 Hour');
 
     // Add legend below the x-axis
     const legend = this.svg.append('g')
@@ -123,7 +124,7 @@ export class BarGraphComponent implements OnInit {
       .attr('x', 75)
       .attr('y', 5)
       .attr('dy', '0.35em')
-      .text('Successes')
+      .text('Failures')
       .attr('class', 'legend-label');
   }
 }
