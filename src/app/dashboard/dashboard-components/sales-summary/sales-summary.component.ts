@@ -11,6 +11,9 @@ import {
   ApexTheme,
   ApexGrid
 } from 'ng-apexcharts';
+import { WeeklyDataEntry } from 'src/app/WeeklyDataEntry/weekly-data-entry';
+import { Get7DaysDataService } from 'src/app/get7DaysData/get7-days-data.service';
+import { WeeklyData } from 'src/app/weeklyData/weekly-data';
 
 export type salesChartOptions = {
   series: ApexAxisChartSeries | any;
@@ -35,29 +38,9 @@ export class SalesSummaryComponent implements OnInit {
 
   @ViewChild("chart") chart: ChartComponent = Object.create(null);
   public salesChartOptions: Partial<salesChartOptions>;
-  constructor() {
+  constructor(private service:Get7DaysDataService) {
     this.salesChartOptions = {
-      series: [
-        {
-          name: "Limit Svc",
-          data: [1458, 361, 490, 758, 351, 402, 1409, 100],
-        },
-        {
-          name: "Balance Core",
-          data: [2007, 1114, 392, 4512, 323, 345, 520, 413],
-        },
-
-        {
-          name: "Liquidity Payment Integration",
-          data: [300, 2461, 310, 2118, 290, 722, 109, 100],
-        },
-
-        {
-          name: "Liquidity Check",
-          data: [400, 4331, 540, 728, 351, 42, 109, 100],
-        }
-
-      ],
+      series: [],
       chart: {
         fontFamily: 'Nunito Sans,sans-serif',
         height: 250,
@@ -76,18 +59,8 @@ export class SalesSummaryComponent implements OnInit {
       grid: {
         strokeDashArray: 3,
       },
-
       xaxis: {
-        categories: [
-          "Jan",
-          "Feb",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-          "Aug",
-        ],
+        categories: [],
       },
       tooltip: {
         theme: 'dark'
@@ -96,6 +69,31 @@ export class SalesSummaryComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.service.getData().subscribe((data: WeeklyDataEntry[]) => {
+      this.updateChartData(data);
+    });
   }
 
+  updateChartData(data: WeeklyDataEntry[]): void {
+    console.log("WeeklyData: ",data);
+    const categories = data.map((item: any) => item.date);
+    console.log("Categories: ",categories);
+    const limitSvcData = data.map((item: any) => item.limitSvc);
+    const balanceCoreData = data.map((item: any) => item.balanceCore);
+    const liquidityPaymentIntegrationData = data.map((item: any) => item.liquidityPaymentIntegration);
+    const liquidityCheckData = data.map((item: any) => item.liquidityCheck);
+
+    this.salesChartOptions = {
+      ...this.salesChartOptions,
+      series: [
+        { name: "Limit Svc", data: limitSvcData },
+        { name: "Balance Core", data: balanceCoreData },
+        { name: "Liquidity Payment Integration", data: liquidityPaymentIntegrationData },
+        { name: "Liquidity Check", data: liquidityCheckData }
+      ],
+      xaxis: {
+        categories: categories,
+      }
+    };
+  }
 }
