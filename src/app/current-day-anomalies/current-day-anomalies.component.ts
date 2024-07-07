@@ -20,7 +20,7 @@ export class CurrentDayAnomaliesComponent implements OnInit{
 
   ngOnInit(): void {
     this.currentHour = new Date().getHours();
-    this.initializeHourColors();
+    this.initializeHourColors(this.currentHour);
     this.fetchHourlyAnomalyData(this.currentHour); // Initial fetch for current hour
     this.setupPeriodicCheckForHour(); // Setup periodic check for fetching data at x:00:00
   }
@@ -35,7 +35,7 @@ export class CurrentDayAnomaliesComponent implements OnInit{
       .subscribe(
         (data: any) => { // Adjust type as per your service response
           this.anomalyData = data;
-          this.initializeHourColors(); // Update hour colors after fetching data
+          this.initializeHourColors(hour); // Update hour colors after fetching data
           this.detectAnomalyAndAlert(); // Check for anomaly and send alert if needed
         },
         (error) => {
@@ -62,11 +62,11 @@ export class CurrentDayAnomaliesComponent implements OnInit{
     }, 2000); // Check every 2 seconds
   }
 
-  initializeHourColors(): void {
+  initializeHourColors(hour:number): void {
     for (let i = 0; i < 24; i++) {
       
-      console.log("Current Hour: ",this.currentHour);
-      if (i < this.currentHour) {
+      console.log("Current Hour: ",hour);
+      if (i < hour) {
         // Past hours
         console.log("Applying colors for: ",i);
         this.hourColors[i] = this.hasAnomaly(i) ? 'red' : 'green';
