@@ -1,0 +1,110 @@
+{
+  "data": [
+    {
+      "date": "2024-07-06",
+      "hour": 0,
+      "anomalyCount": 2,
+      "anomalies": [
+        { "accountId": "acc123", "type": "type1" },
+        { "accountId": "acc456", "type": "type2" }
+      ]
+    },
+    {
+      "date": "2024-07-06",
+      "hour": 1,
+      "anomalyCount": 0,
+      "anomalies": []
+    },
+    {
+      "date": "2024-07-06",
+      "hour": 2,
+      "anomalyCount": 1,
+      "anomalies": [
+        { "accountId": "acc789", "type": "type3" }
+      ]
+    },
+    {
+      "date": "2024-07-06",
+      "hour": 3,
+      "anomalyCount": 0,
+      "anomalies": []
+    },
+    {
+      "date": "2024-07-06",
+      "hour": 4,
+      "anomalyCount": 0,
+      "anomalies": []
+    },
+    {
+      "date": "2024-07-06",
+      "hour": 5,
+      "anomalyCount": 0,
+      "anomalies": []
+    },
+    {
+      "date": "2024-07-06",
+      "hour": 6,
+      "anomalyCount": 0,
+      "anomalies": []
+    },
+    {
+      "date": "2024-07-06",
+      "hour": 7,
+      "anomalyCount": 0,
+      "anomalies": []
+    },
+    {
+      "date": "2024-07-06",
+      "hour": 8,
+      "anomalyCount": 4,
+      "anomalies": [
+        { "accountId": "acc123", "type": "type1" },
+        { "accountId": "acc456", "type": "type2" },
+        { "accountId": "acc789", "type": "type1" },
+        { "accountId": "acc111", "type": "type2" }
+      ]
+    },
+    {
+      "date": "2024-07-06",
+      "hour": 9,
+      "anomalyCount": 0,
+      "anomalies": []
+    },
+    {
+      "date": "2024-07-06",
+      "hour": 10,
+      "anomalyCount": 3,
+      "anomalies": [
+        { "accountId": "acc123", "type": "type1" },
+        { "accountId": "acc456", "type": "type2" },
+        { "accountId": "acc789", "type": "type1" }
+      ]
+    },
+    {
+      "date": "2024-07-06",
+      "hour": 11,
+      "anomalyCount": 0,
+      "anomalies": []
+    } ,
+
+    {
+      "date": "2024-07-06",
+      "hour": 12,
+      "anomalyCount": 0,
+      "anomalies": []
+    } ,
+
+    {
+      "date": "2024-07-06",
+      "hour": 13,
+      "anomalyCount": 4,
+      "anomalies": [
+      { "accountId": "acc123", "type": "type1" },
+      { "accountId": "acc456", "type": "type2" },
+      { "accountId": "acc789", "type": "type1" },
+      { "accountId": "acc111", "type": "type2" }]
+    }
+     
+  ]
+  }
+  

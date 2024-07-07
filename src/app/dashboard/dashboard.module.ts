@@ -13,7 +13,12 @@ import { BubbleChartModule } from "./dashboard-components/bubble-chart/bubble-ch
 import { BarGraphComponent } from "./dashboard-components/bar-graph/bar-graph.component";
 import { BarGraphModule } from "./dashboard-components/bar-graph/bar-graph.module";
 import { LineChartModule } from "./dashboard-components/line-chart/line-chart.module";
+<<<<<<< HEAD
 import { HttpClientModule } from "@angular/common/http";
+=======
+import { CurrentDayAnomaliesModule } from "../current-day-anomalies/current-day-anomalies.module";
+
+>>>>>>> 42959e4 (updatedUI)
 const routes: Routes = [
   {
     path: "",
@@ -35,7 +40,11 @@ const routes: Routes = [
     BubbleChartModule,
     BarGraphModule,
     LineChartModule,
+<<<<<<< HEAD
     HttpClientModule,
+=======
+    CurrentDayAnomaliesModule
+>>>>>>> 42959e4 (updatedUI)
   ],
   declarations: [
     DashboardComponent,

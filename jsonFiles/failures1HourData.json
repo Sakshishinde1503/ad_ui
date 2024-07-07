@@ -1,0 +1,24 @@
+{"data":
+[
+  {
+    "service": "Service1",
+    "transactions": 100,
+    "failures": 5
+  },
+  {
+    "service": "Service2",
+    "transactions": 120,
+    "failures": 3
+  },
+  {
+    "service": "Service3",
+    "transactions": 90,
+    "failures": 4
+  },
+  {
+    "service": "Service4",
+    "transactions": 150,
+    "failures": 2
+  }
+]
+}
